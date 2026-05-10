@@ -1,0 +1,42 @@
+from datetime import datetime
+
+now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+
+html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f5f5f5;
+        }}
+        .card {{
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }}
+        h1 {{ margin: 0 0 0.5rem; font-size: 1rem; color: #666; }}
+        p {{ margin: 0; font-size: 2.5rem; font-weight: bold; color: #333; }}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Last updated</h1>
+        <p>{now}</p>
+    </div>
+</body>
+</html>"""
+
+with open("index.html", "w") as f:
+    f.write(html)
+
+print(f"Generated at {now}")
