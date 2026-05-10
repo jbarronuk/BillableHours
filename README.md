@@ -1,4 +1,4 @@
-# ClientNag 🔔
+# BillableHours
 
 Automated work tracking dashboard that monitors Clockify time entries and sends push notifications when billable hours need attention.
 
